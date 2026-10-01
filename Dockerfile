@@ -1,3 +1,3 @@
-FROM quay.io/minio/minio:latest
+FROM cgr.dev/chainguard/minio:latest
 
-ENTRYPOINT ["sh", "-c", "exec minio server --address :${PORT:-9000} /data"]
+ENTRYPOINT ["minio", "server", "/data", "--address", ":9000"]
